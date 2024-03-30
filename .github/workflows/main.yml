@@ -1,4 +1,4 @@
-name: Build and Deploy Angular App
+name: Build and Push Docker Image
 
 on:
   push:
@@ -22,15 +22,13 @@ jobs:
         run: npm install
 
       - name: Build Angular app
-        run: npm run deploy
+        run: npm run build --prod
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
+      - name: Build Docker image
+        run: docker build -t your-angular-app .
 
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: dist/angular-ci-cd
+      - name: Log in to Docker Hub
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+
+      - name: Push Docker image
+        run: docker push your-angular-app
