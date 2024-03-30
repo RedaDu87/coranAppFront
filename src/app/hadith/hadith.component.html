@@ -1,0 +1,96 @@
+
+  
+  <!-- <button (click)="dialog.showModal()">Show dialog</button> -->
+
+<div class="conteneurDeBase">
+    <div class="styque">
+      <div class="styqueOpacity">
+        <table>
+            <tr>
+                <td  colspan="4">
+                    <h1> {{title}}</h1>
+                </td>
+            </tr>
+          <tr>
+    
+            <td>
+            </td>
+            <td>
+               
+            </td>
+            <td>
+              
+            </td>
+            <td>
+    
+                <select class="box" [(ngModel)]="myDropDown" (ngModelChange)="onChangeofOptions($event)">
+                    <option *ngFor="let cat of listeCategories" value="{{cat.id}}">{{cat.title}}</option>
+                
+                  </select>
+    
+            </td>
+    
+            <td>
+              
+            </td>
+          </tr>
+        </table>
+      </div>
+      
+    </div>
+  
+  
+    <div class="aya" *ngFor="let had of listeHadiths; index as i">
+        <dialog id="dialog" #dialog>
+            <div>
+                {{hadith.title}}
+                <hr>
+                {{hadith.hadeeth}}
+                <hr>
+                {{hadith.attribution}}
+                <hr>
+                {{hadith.grade}}
+                <hr>
+                {{hadith.explanation}}
+                <hr>
+                {{hadith.hadeeth_ar}}
+                <hr>
+                {{hadith.explanation_ar}}
+                <hr>
+                {{hadith.grade_ar}}
+            </div>
+            <div>
+              <button class="button-9" (click)="dialog.close()">OK</button>
+            </div>
+          </dialog>
+  
+      <table>
+  
+        <tr>
+          <td class="firstTd">
+            <h1>{{i+1}}</h1>
+            
+  
+          </td>
+          
+          <td>
+            <h1 class="font-kitab">{{had.title}}</h1>
+  
+          </td>
+          <td class="lastTd">
+            <button class="button-9" (click)="hadithExplaynation(+had.id);dialog.showModal()">Détail</button>
+          </td>
+          
+        </tr>
+        
+       
+  
+      </table>
+  
+  
+  
+  
+  
+    </div>
+  
+  </div>
