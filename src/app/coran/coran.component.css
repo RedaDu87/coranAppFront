@@ -33,6 +33,10 @@
   color: blue !important;
 }
 
+.greenH2{
+  color: green !important;
+}
+
 @font-face {
     font-family: 'Kitab';
     src: url("//cdn.alquran.cloud/public/fonts/Kitab-Regular.ttf");
@@ -79,10 +83,12 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .conteneurDeBase{
-    background-image: url("../../assets/images/Mosque-PPT-Backgrounds.jpg");
+    /* background-image: url("../../assets/images/Mosque-PPT-Backgrounds.jpg"); */
+    background-image: url("/src/assets/images/Mosque-PPT-Backgrounds.jpd");
     background-repeat:space;
   background-attachment:fixed;
   background-size:cover ;
+
   min-height: 100vh;
   
 

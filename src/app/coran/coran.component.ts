@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 })
 export class CoranComponent implements AfterViewInit{
 
+
   @ViewChild('someTag') myDiv!: ElementRef;
 
   isArabChecked = true;
@@ -138,7 +139,7 @@ constructor( public alquranService : AlquranService,private router: Router){}
 
   currentIndex = 0;
 
-  playaya(){
+  playayaAr(){
    if (this.audioTable.length !=0) this.pauseaya();
     this.audioTable.forEach(i => i = null);
     this.audioTable.length =0;
@@ -163,6 +164,31 @@ constructor( public alquranService : AlquranService,private router: Router){}
     this.goToAnchor1();
  
 }
+
+playayaFr() {
+  if (this.audioTable.length !=0) this.pauseaya();
+    this.audioTable.forEach(i => i = null);
+    this.audioTable.length =0;
+    this.currentIndex = 0;
+    this.sourah.ayas.forEach((item)=>{
+        this.audioObj = new Audio();
+       this.audioObj.src = item.audioFr;
+   
+       this.audioTable.push(this.audioObj);
+    });
+
+    for (let i =0; i < this.audioTable.length;i++){
+      this.audioTable[i].addEventListener('ended', () => {
+        this.audioTable[i+1].play();
+        this.currentIndex++;
+            console.log(this.audioTable[i+1]);
+            this.goToAnchor1();
+          });
+          
+    }
+    this.audioTable[0].play();
+    this.goToAnchor1();
+  }
 
 pauseaya(){
   console.log(this.currentIndex);
@@ -202,12 +228,55 @@ goToAnchor1() {
 
 
 
-playanaya(i :number){
+playanayaAr(i :number){
+  if (this.audioTable.length !=0) this.pauseaya();
+  this.audioTable.forEach(i => i = null);
+  this.audioTable.length =0;
+  this.currentIndex = 0;
+  this.sourah.ayas.forEach((item)=>{
+      this.audioObj = new Audio();
+     this.audioObj.src = item.audioAr;
+ 
+     this.audioTable.push(this.audioObj);
+  });
   if (this.audioTable.length !=0) this.pauseaya();
 
   this.sourah.ayas.forEach((item)=>{
     this.audioObj = new Audio();
    this.audioObj.src = item.audioAr;
+
+   this.audioTable.push(this.audioObj);
+});
+this.currentIndex =i;
+console.log(this.audioTable[i+1]);
+// this.goToAnchor1();
+this.audioTable[i].addEventListener('ended', () => {
+  this.audioTable[i+1].pause();
+
+    });
+    this.audioTable[i].currentTime = 0;
+  this.audioTable[i].play();
+ 
+}
+
+playanayaFr(i :number){
+  if (this.audioTable.length !=0) this.pauseaya();
+    this.audioTable.forEach(i => i = null);
+    this.audioTable.length =0;
+    this.currentIndex = 0;
+    this.sourah.ayas.forEach((item)=>{
+        this.audioObj = new Audio();
+       this.audioObj.src = item.audioFr;
+   
+       this.audioTable.push(this.audioObj);
+    });
+
+
+  if (this.audioTable.length !=0) this.pauseaya();
+
+  this.sourah.ayas.forEach((item)=>{
+    this.audioObj = new Audio();
+   this.audioObj.src = item.audioFr;
 
    this.audioTable.push(this.audioObj);
 });

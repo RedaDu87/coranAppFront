@@ -33,7 +33,7 @@ h2 {
 .styque {
     position: sticky;
     top: 0;
-    background-image: url("../../assets/images/texture-nav.jpg");
+    background-image: url("/src/assets/images/texture-nav.jpg");
  
     z-index: 3;
 }
@@ -63,7 +63,7 @@ h2 {
 }
 
 .conteneurDeBase{
-    background-image: url("../../assets/images/Mosque-PPT-Backgrounds.jpg");
+    background-image: url("/src/assets/images/Mosque-PPT-Backgrounds.jpg");
     background-repeat:space;
   background-attachment:fixed;
   background-size:cover ;

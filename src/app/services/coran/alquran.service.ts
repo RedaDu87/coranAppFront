@@ -19,13 +19,13 @@ export class AlquranService {
 
  
  
-  // getExemple(nombre : number): Observable<any> {
-  //   return this.http.get("https://api.alquran.cloud/v1/surah/"+nombre+"/editions/ar.hudhaify,en.transliteration,fr.leclerc,fr.hamidullah");
-  // }
-
   getExemple(nombre : number): Observable<any> {
-    return this.http.get("https://api.alquran.cloud/v1/surah/"+nombre+"/editions/ar.saoodshuraym,en.transliteration,fr.leclerc,fr.hamidullah");
+    return this.http.get("https://api.alquran.cloud/v1/surah/"+nombre+"/editions/ar.hudhaify,en.transliteration,fr.leclerc,fr.hamidullah");
   }
+
+  // getExemple(nombre : number): Observable<any> {
+  //   return this.http.get("https://api.alquran.cloud/v1/surah/"+nombre+"/editions/ar.saoodshuraym,en.transliteration,fr.leclerc,fr.hamidullah");
+  // }
 
   getSouratesList(): Observable<any>{
     return this.http.get(this.souhatesUrl);
