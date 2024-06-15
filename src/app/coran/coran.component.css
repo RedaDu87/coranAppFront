@@ -8,11 +8,11 @@
 .aya {
     /* border : 2px solid black; */
     /* border-radius: 1cm; */
-      background-color: rgba(255, 255, 255, 0.8);  
+      background-color: rgba(255, 255, 255, 0.8);
       border:  double;
      /* background-size: cover; */
-    
-     
+
+
 }
 
 .styque {
@@ -21,11 +21,11 @@
   position: fixed;
   top: 0;
   width: 100%;
-  
+
 }
 
 .styqueOpacity{
-    /* background-color: rgba(255, 255, 255, 0.8);  
+    /* background-color: rgba(255, 255, 255, 0.8);
     height: 17vh;  */
 }
 
@@ -83,14 +83,13 @@ audio::-webkit-media-controls-time-remaining-display {
 }
 
 .conteneurDeBase{
-    /* background-image: url("../../assets/images/Mosque-PPT-Backgrounds.jpg"); */
-    background-image: url("/src/assets/images/Mosque-PPT-Backgrounds.jpd");
+     background-image: url("../../assets/images/Mosque-PPT-Backgrounds.jpg");
     background-repeat:space;
   background-attachment:fixed;
   background-size:cover ;
 
   min-height: 100vh;
-  
+
 
     /* background-image: linear-gradient(rgba(0, 0, 255, 0.5), rgba(255, 255, 0, 0.5)); */
 }
@@ -117,4 +116,3 @@ audio::-webkit-media-controls-time-remaining-display {
 
 
 
-  
